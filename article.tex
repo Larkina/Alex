@@ -123,7 +123,7 @@ u = f \text{\;на\;} \partial \Omega,
 \begin{equation} \label{ani}
 \textbf{J} = \sigma \textbf{E},
 \end{equation}
-где $\sigma$ --- симметричная, положительно определенная матрица $2 \times 2$, которая может зависеть от позиции, в силу симметричности и положительно определенности матрица имеет ортогональные собственные векторы и положительные собственные значения. Напомним, что матрица $\textbf{A}$ называется \textit{положительно определенной}, если  $\textbf{v}^{\textbf{T}}\textbf{Av} > 0, \forall \textbf{v} \ne 0$, $\textbf{v}^{\textbf{T}}$ --- транспонированный вектор $\textbf{v}$. Обратное так же верно: матрица с ортогональными собственными векторами и положительными собственными значениями является положительно определенной симметричной матрицей.
+где $\sigma$ --- симметричная, положительно определенная матрица $2 \times 2$, которая может зависеть от позиции, в силу симметричности и положительно определенности матрица имеет ортогональные собственные векторы и положительные собственные значения. Напомним, что матрица $\textbf{A}$ называется \textit{положительно определенной}, если  $\textbf{v}^{\textbf{T}}\textbf{Av} > 0, \; \forall \textbf{v} \ne 0$, $\textbf{v}^{\textbf{T}}$ --- транспонированный вектор $\textbf{v}$. Обратное так же верно: матрица с ортогональными собственными векторами и положительными собственными значениями является положительно определенной симметричной матрицей.
 
 
 Для анизотропной проводимости (\ref{ani}) заменяет (\ref{dep}), и (\ref{eq}) становится
@@ -250,19 +250,33 @@ f(\theta) = \sum_{k \in \mathbb{Z}}{f_k e^{ik\theta}}, \text{\;где\;} f_k = \
 \end{equation*}
 Сопоставляя $f_k$ с соответствующими слагаемыми слева в (\ref{fd}) заключаем
 
-\begin{equation}
-c_0 = f_0 \text{\;и\;} c_k + d_k = f_k \forall k \in \mathbb{Z} \setminus \{0\}.
+\begin{equation} \label{e12}
+c_0 = f_0 \text{\;и\;} c_k + d_k = f_k, \; \forall k \in \mathbb{Z} \setminus \{0\}.
 \end{equation}
 
 
 Чтобы завершить вычисления воспользуемся граничным условием Неймана \ref{dD}, которое принимает вид $\frac{\partial u}{\partial r} = 0$ на $\partial D$ (используя тот факт, что векторное поле $\mathbf{n}$ на $\partial D$ указывает в радиальном направлении к началу координат так, что $\frac{\partial}{\partial \mathbf{n}} = -\frac{\partial}{\partial r}$ вдоль этой внутренней границы). Формально почленно дифференцируя \ref{sol} по $r$, а затем вычисляя в точке $r=\rho$ приводит к
 
 \begin{equation}\label{e13}
-\frac{d_0}{\rho} + \sum_{k \in \mathbb{Z} \setminus \{0\}}{|k|(c_k \rho^{|k|-1} - d_k \rho^{-|k|-1})e^{ik\theta}} = 0 \forall \theta \in [0, 2 \pi).
+\frac{d_0}{\rho} + \sum_{k \in \mathbb{Z} \setminus \{0\}}{|k|(c_k \rho^{|k|-1} - d_k \rho^{-|k|-1})e^{ik\theta}} = 0,\; \forall \theta \in [0, 2 \pi).
 \end{equation}
 Выражение (\ref{e13}) может быть интерпретировано как ряд Фурье для нулевой функции, чьи коэффициенты Фурье равны нулю, поэтому можно записать
 
-\begin{equation}
-d_0 = 0,
+\begin{equation}\label{e14}
+d_0 = 0, |k|(c_k \rho^{|k|-1} - d_k \rho^{-|k|-1})e^{ik\theta} = 0, \; \forall k \in \mathbb{Z} \setminus \{0\}.
 \end{equation}
+Решая (\ref{e12}) и (\ref{e14}) относительно $c_k, d_k$ и подставляя в (\ref{sol}) получаем решение уравнения Лапласа в кольце, удовлетворяющее граничным условиям (\ref{dirichle}) и (\ref{dD}):
+
+\begin{equation}\label{soll}
+u(r, \theta) = \sum_{k \in \mathbb{Z}}{(\frac{f_k}{1+\rho^{2|k|}} r^{|k|}e^{ik\theta} + 
+\frac{\rho^{2|k|}f_k}{1+\rho^{2|k|}}r^{-|k|}e^{ik\theta}
+)}
+\end{equation}
+для всех $r \in [\rho, 1]$ и $\theta \in [0, 2\pi)$, $u$ неопределена внутри $D$. При помощи (\ref{soll}) мы можем легко посчитать данные Неймана на границе $\partial \Omega$, учитывая, что $\frac{\partial}{\partial \textbf{n}} = \frac{\partial}{\partial r}$ на этой внешней границе $r = 1$:
+
+\begin{equation}
+\frac{\partial u}{\partial \textbf{n}} = \sum_{k \in \mathbb{Z}}{\frac{|k|(1-\rho^{2|k|})}{1+\rho^{2|k|}}f_k e^{ik\theta}}.
+\end{equation}
+
+
 \end{document}
