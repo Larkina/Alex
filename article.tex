@@ -62,8 +62,7 @@ Your abstract goes here...
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.25\textwidth]{1.png}
-  \caption{A region $\Omega$ hiding an object from an external
-    observer.}
+  \caption{Область $\Omega$, скрывающая объект от внешнего наблюдателя.}
   \label{fig:1}
 \end{figure}
 
@@ -154,17 +153,8 @@ $\textit{Упражнение 4.\;}$ Покажите, что если $\sigma$ 
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.5\textwidth]{2.png}
-  \caption{The image on the left is an impedance image of a cross
-    section of the torso, taken as blood was filling the subject’s
-    heart and leaving the lungs. The area near the heart shows up as
-    red, for the conductivity at this moment is high (blood is very
-    conductive). In contrast, the lungs have little blood in them at
-    this moment and are shown in blue. In the image on the right, the
-    blood has left the heart and entered the lungs, reversing the
-    colors. (Our thanks to David Isaacson and the Electrical Impedance
-    Imaging group at the Rensselaer Polytechnic Institute for
-    supplying us with these images, obtained from their ACT III
-    impedance imaging system.)}
+  \caption{Слева изображено импедансное отображение поперечного сечения туловища, когда кровь заполняла сердца и выходила из легких объекта.
+  Область рядом с сердцем отмечена красным, так как проводимость в этот момент высока (кровь очень проводима). В противоположность, легкие, в которых в данный момент немного крови, окрашены в голубой. Справа кровь вышла из сердца и перешла в легкие, изменив цвета на противоположные}
   \label{fig:2}
 \end{figure}
 
@@ -178,7 +168,7 @@ $\textit{Упражнение 4.\;}$ Покажите, что если $\sigma$ 
 Исследуемая нами величина --- это скорость, с которой электрический ток втекает в $\Omega$ в каждой точке $\partial \Omega$. Скорость, с которой ток вытекает рядом с точкой $p \in \partial \Omega = \textbf{J}(p) \cdot \textbf{n}(p)$, где $\textbf{n}(p)$ --- внешний единичный вектор нормали к $\partial \Omega$ в точке $p$. В дальнейшем будем пренебрегать зависимостью величин, таких как $\nabla u$ и $\textbf{n}$, от $p$. Применение (\ref{dep}) показывает, что ток, текущий по всей $\partial \Omega$ в любой точке равен $- \gamma \nabla u \cdot \textbf{n}$. Таким образом скорость, с которой ток \textit{входит} в $\partial \Omega$ есть $\gamma \nabla u \cdot \textbf{n}$ и называется $\textit{данные Неймана}$ для функции $u$.
 
 
-Наличие $D$ в $\Omega$ меняет поток тока, и никакой ток не может проходить в $D$ из $\Omega \setminus D$. Это означает, что $\textbf{J} \cdot \textbf{n} = 0$ в $\partial D$, здесь $\textbf{n}$ обозначает единичный вектор нормали к $\partial D$, указывающий внутрь $D$ (из $\Omega \setminus D$). Из уравнения (\ref{dep}) вытекает $\gamma \nabla u = 0$ на $\partial \Omega$. В этом случае потенциал $u$ опеределен только в $\Omega \setminus D$ и подчиняется уравнению Лапласа, наряду с условием Дирихле (\ref{dirichle}) на $\partial \Omega$ и дополнительному граничному условию 
+Наличие $D$ в $\Omega$ меняет поток тока, и никакой ток не может проходить в $D$ из $\Omega \setminus D$. Это означает, что $\textbf{J} \cdot \textbf{n} = 0$ в $\partial D$, здесь $\textbf{n}$ обозначает единичный вектор нормали к $\partial D$, указывающий внутрь $D$ (из $\Omega \setminus D$). Из уравнения (\ref{dep}) вытекает $\gamma \nabla u = 0$ на $\partial \Omega$. В этом случае потенциал $u$ опеределен только в $\Omega \setminus D$ и подчиняется уравнению Лапласа, наряду с условием Дирихле (\ref{dirichle}) на $\partial \Omega$ и дополнительному граничному условию
 
 \begin{equation}\label{dD}
 \gamma \nabla u = 0 \text{\;на\;} \partial \Omega.
@@ -203,18 +193,10 @@ $\textit{Упражнение 4.\;}$ Покажите, что если $\sigma$ 
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.5\textwidth]{3.png}
-  \caption{Comparison of solutions on the unit disk and an
-    annulus. The graph on the left shows flow lines of the current
-    $\mathbf J = −\gamma \nabla u$, where $u$ is the solution to
-    Laplace’s equation with Dirichlet condition $f(\theta) =
-    cos(\theta) + sin(\theta)$ (the potential applied by the
-    observer)on the outer boundary of the unit disk. The flow shown in
-    the middle graph has the same applied potential $f$ on the outer
-    boundary plus the Neumann condition of zero flux on the inner
-    boundary of the annulus $1/2 \leq r \leq 1$. The rightmost graph
-    compares $\mathbf J$ on the boundary of the disk and the annulus,
-    where the shorter arrows correspond to $\mathbf J$ for the
-    annulus.}
+  \caption{Сравнение решений в единичном диске и кольце. Первый график показывает течение линий тока
+    $\mathbf J = -\gamma \nabla u$, где $u$ --- решение уравнения Лапласа в граничными условиями Дирихле $f(\theta) =
+    cos(\theta) + sin(\theta)$ (потенциал, примененный наблюдателем) на внешнюю границу единичного диска. Поток, показанный на среднем графике имеет тот же самый примененный потенциал  $f$ на внешней границе, плюс условие Неймана нулевого потока на внутренней границе диска
+    $1/2 \leq r \leq 1$. На третьем графике сравнивается $\mathbf J$ на границе диска и кольца, где более которкие стрелки отвечают  $\mathbf J$ для кольца.}
   \label{fig:3}
 \end{figure}
 
@@ -246,7 +228,7 @@ $\textit{Упражнение 4.\;}$ Покажите, что если $\sigma$ 
 Область $\Omega \setminus D$ --- кольцо, значит удобно записать уравнение Лапласа (\ref{laplac}) в полярных координатах
 \begin{equation}\label{polar}
 \frac{\partial^2 u}{\partial r^2} + \frac{1}{r} \frac{\partial u}{\partial r} + \frac{1}{r^2} \frac{\partial^2 u}{\partial \theta^2} = 0,
-\end{equation} 
+\end{equation}
 где $u = u(r, \theta)$ это потенциал в $\Omega \setminus D$. Используя (\ref{polar}), легко видеть, что функции $1, \ln(r)$ и $r^{|k|} e^{ik\theta}, r^{-|k|}e^{ik\theta}$ грамоничны, для всех $k \in \mathbb{Z}, r > 0$ и, следовательно, на кольце $\Omega \setminus D$. Мы построим необходимое решение $u(r, \theta)$ как суперпозицию этих функций,
 
 \begin{equation}\label{sol}
@@ -269,10 +251,10 @@ f(\theta) = \sum_{k \in \mathbb{Z}}{f_k e^{ik\theta}}, \text{\;где\;} f_k = \
 
 \begin{equation}
 c_0 = f_0 \text{\;и\;} c_k + d_k = f_k \forall k \in \mathbb{Z} \setminus \{0\}.
-\end{equation} 
+\end{equation}
 
 
-Чтобы завершить вычисления воспользуемся граничным условием Неймана \ref{dD}, которое принимает вид $\frac{\partial u}{\partial r} = 0$ на $\partial D$ (используя тот факт, что векторное поле $\mathbf{n}$ на $\partial D$ указывает в радиальном направлении к началу координат так, что $\frac{\partial}{\partial \mathbf{n}} = -\frac{\partial}{\partial r}$ вдоль этой внутренней границы). Формально почленно дифференцируя \ref{sol} по $r$, а затем вычисляя в точке $r=\rho$ приводит к 
+Чтобы завершить вычисления воспользуемся граничным условием Неймана \ref{dD}, которое принимает вид $\frac{\partial u}{\partial r} = 0$ на $\partial D$ (используя тот факт, что векторное поле $\mathbf{n}$ на $\partial D$ указывает в радиальном направлении к началу координат так, что $\frac{\partial}{\partial \mathbf{n}} = -\frac{\partial}{\partial r}$ вдоль этой внутренней границы). Формально почленно дифференцируя \ref{sol} по $r$, а затем вычисляя в точке $r=\rho$ приводит к
 
 \begin{equation}\label{e13}
 \frac{d_0}{\rho} + \sum_{k \in \mathbb{Z} \setminus \{0\}}{|k|(c_k \rho^{|k|-1} - d_k \rho^{-|k|-1})e^{ik\theta}} = 0 \forall \theta \in [0, 2 \pi).
@@ -280,6 +262,6 @@ c_0 = f_0 \text{\;и\;} c_k + d_k = f_k \forall k \in \mathbb{Z} \setminus \{0\}
 Выражение (\ref{e13}) может быть интерпретировано как ряд Фурье для нулевой функции, чьи коэффициенты Фурье равны нулю, поэтому можно записать
 
 \begin{equation}
-d_0 = 0, 
+d_0 = 0,
 \end{equation}
 \end{document}
