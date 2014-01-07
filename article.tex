@@ -200,7 +200,7 @@ $\textit{Упражнение 4.\;}$ Покажите, что если $\sigma$ 
 \end{equation} 
 где $u = u(r, \theta)$ это потенциал в $\Omega \setminus D$. Используя (\ref{polar}), легко видеть, что функции $1, \ln(r)$ и $r^{|k|} e^{ik\theta}, r^{-|k|}e^{ik\theta}$ грамоничны, для всех $k \in \mathbb{Z}, r > 0$ и, следовательно, на кольце $\Omega \setminus D$. Мы построим необходимое решение $u(r, \theta)$ как суперпозицию этих функций,
 
-\begin{equation}
+\begin{equation}\label{sol}
 u(r, \theta) = c_0 + d_0\ln(r) + \sum\limits_{k \in \mathbb{Z} \setminus \{0\}}{(c_k r^{|k|} + d_k r^{-|k|}) e^{ik\theta}},
 \end{equation}
 правильно подбирая коэффициенты $c_k, d_k$.
@@ -223,5 +223,14 @@ c_0 = f_0 \text{\;и\;} c_k + d_k = f_k \forall k \in \mathbb{Z} \setminus \{0\}
 \end{equation} 
 
 
-Чтобы завершить вычисления воспользуемся граничным условием Неймана \ref{dD}, которое принимает вид $\frac{\partial u}{\partial r} = 0$ на $\partial D$ (используя тот факт, что векторное поле $\mathbf{n}$ на $\partial D$ указывает в радиальном направлении к началу координат так, что $\frac{\partial}{\partial \mathbf{n}} = -\frac{\partial}{\partial r}$ вдоль этой внутренней границы).
+Чтобы завершить вычисления воспользуемся граничным условием Неймана \ref{dD}, которое принимает вид $\frac{\partial u}{\partial r} = 0$ на $\partial D$ (используя тот факт, что векторное поле $\mathbf{n}$ на $\partial D$ указывает в радиальном направлении к началу координат так, что $\frac{\partial}{\partial \mathbf{n}} = -\frac{\partial}{\partial r}$ вдоль этой внутренней границы). Формально почленно дифференцируя \ref{sol} по $r$, а затем вычисляя в точке $r=\rho$ приводит к 
+
+\begin{equation}\label{e13}
+\frac{d_0}{\rho} + \sum_{k \in \mathbb{Z} \setminus \{0\}}{|k|(c_k \rho^{|k|-1} - d_k \rho^{-|k|-1})e^{ik\theta}} = 0 \forall \theta \in [0, 2 \pi).
+\end{equation}
+Выражение (\ref{e13}) может быть интерпретировано как ряд Фурье для нулевой функции, чьи коэффициенты Фурье равны нулю, поэтому можно записать
+
+\begin{equation}
+d_0 = 0, 
+\end{equation}
 \end{document}
