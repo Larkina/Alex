@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *.aux
 *.bbl
 *.blg
@@ -5,3 +6,16 @@
 *.synctex
 *.tex.bak
 *.tex.sav
+=======
+.htaccess
+css.php
+rpc/
+sites/site*/admin/
+sites/site*/private/
+sites/site*/public/admin/
+sites/site*/public/setup/
+sites/site*/public/theme/
+textpattern/
+HISTORY.txt
+README.txt
+>>>>>>> 5461507eeccdc65a1022e591467694ba153ec510
