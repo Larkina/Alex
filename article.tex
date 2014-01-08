@@ -268,15 +268,19 @@ d_0 = 0, |k|(c_k \rho^{|k|-1} - d_k \rho^{-|k|-1})e^{ik\theta} = 0, \; \forall k
 Решая (\ref{e12}) и (\ref{e14}) относительно $c_k, d_k$ и подставляя в (\ref{sol}) получаем решение уравнения Лапласа в кольце, удовлетворяющее граничным условиям (\ref{dirichle}) и (\ref{dD}):
 
 \begin{equation}\label{soll}
-u(r, \theta) = \sum_{k \in \mathbb{Z}}{(\frac{f_k}{1+\rho^{2|k|}} r^{|k|}e^{ik\theta} + 
+u(r, \theta) = \sum_{k \in \mathbb{Z}}{(\frac{f_k}{1+\rho^{2|k|}} r^{|k|}e^{ik\theta} +
 \frac{\rho^{2|k|}f_k}{1+\rho^{2|k|}}r^{-|k|}e^{ik\theta}
 )}
 \end{equation}
 для всех $r \in [\rho, 1]$ и $\theta \in [0, 2\pi)$, $u$ неопределена внутри $D$. При помощи (\ref{soll}) мы можем легко посчитать данные Неймана на границе $\partial \Omega$, учитывая, что $\frac{\partial}{\partial \textbf{n}} = \frac{\partial}{\partial r}$ на этой внешней границе $r = 1$:
 
-\begin{equation}
+\begin{equation}\label{nei}
 \frac{\partial u}{\partial \textbf{n}} = \sum_{k \in \mathbb{Z}}{\frac{|k|(1-\rho^{2|k|})}{1+\rho^{2|k|}}f_k e^{ik\theta}}.
 \end{equation}
 
 
+Мы можем посчитать решения уравнения Лапласа в открытом диске (без пустоты $D$) используя ту же процедуру, только опустив слагаемые $\ln(r)$ и $r^{-|k|}e^{ik\theta}$ в (\ref{sol}). Как и следовало ожидать, решение оказывается таким же, как (\ref{soll}) с $\rho = 0$. Те же соображения справедливы и для условий Неймана (\ref{nei}). Следует отметить, что требуется взять достаточно гладкую функцию $f$, такую, что ряд Фурье (\ref{nei}) сходится поточечно к некоторой непрерывной функции.
+
+
+\textit{Упражнение 6.} Посчитайте потенциал $u(r, \theta)$ в кольце $\rho \le r < 1$, удовлетворяющий $u(1, \theta) = \cos \theta$, $\frac{\partial u}{\partial \textbf{n}}(\rho, \theta) = 0$. Вычислите $\frac{\partial u}{\partial \textbf{n}}(1, \theta)$, чтобы увидеть связь между радиусом отверстия $\rho$ и информацией о поверхности.
 \end{document}
