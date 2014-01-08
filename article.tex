@@ -1,6 +1,6 @@
 \documentclass[a4paper, 12pt]{article}
 \usepackage{cmap}
-\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[english, russian]{babel}
 \usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
 \usepackage{amsfonts,amssymb}
@@ -8,12 +8,14 @@
 \usepackage{amsthm}
 \usepackage{titlesec}
 \usepackage{graphicx}
+\usepackage{mathtools}
 
  \newcommand{\tit}[1]{\begin{center}{\bf{\Large #1}}\end{center}}
  \newcommand{\aut}[1]{\centerline{{\bf #1}}}
  \newcommand{\cityorg}[1]{\centerline{\it #1}}
  \newcommand{\email}[1]{\centerline{{\small e-mail: #1}}\vspace{\baselineskip}}
 \providecommand{\keywords}[1]{\textbf{\textit{Ключевые слова:}} #1}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \begin{document}
 
 \sloppy
@@ -36,7 +38,7 @@ and Harry Potter’s Cloak}
 \setcounter{secnumdepth}{5}
 \numberwithin{equation}{section}
 \numberwithin{figure}{section}
-\titlelabel{\thetitle.\hspace{0pt}}
+%\titlelabel{\thetitle.\hspace{0pt}}
 
 \section{Введение}
 
@@ -289,5 +291,66 @@ u(r, \theta) = \sum_{k \in \mathbb{Z}}{(\frac{f_k}{1+\rho^{2|k|}} r^{|k|}e^{ik\t
 Как было отмечено выше, один из способов, как можно попытаться спрятать объекта внутри $\Omega$ --- выкопать область $D = B_{\rho}{\textbf{0}}$ с некоторым подходящим $0 < \rho < 1$, поместить объект внутри, тем самым изолируя его от $\partial \Omega$. Наблюдатель не может получить информацию о спрятанном объекте, так как в данных Неймана, полученных из (\ref{nei}) не зависит от содержимого $D$. К сожалению, из (\ref{nei}) ясно видно, что данные Неймана зависят от $\rho$. Если $rho > 0$, то наблюдатель вероятно будет знать, что происходит что-то подозрительное.
 
 
-Чтобы увидеть это, назовем $u_0$ решением уравнения Лапласа на $\Omega$ с условием Дирихле $u_0 = f$, когда внутри нет $D$, то есть $\Omega$ пуста, $u$ решением уравнения Лапласа на $\Omega \setminus D$ с $D = B_{\rho}(\textbf{0})$.
+Чтобы увидеть это, назовем $u_0$ решением уравнения Лапласа на $\Omega$ с условием Дирихле $u_0 = f$, когда внутри нет $D$, то есть $\Omega$ пуста, $u$ решением уравнения Лапласа на $\Omega \setminus D$ с $D = B_{\rho}(\textbf{0})$
+и $u = f$ на $\partial \Omega$ и удовлетворющее граничному условию (\ref{dD}). Мы хотим посчитать, как
+сильно различаются $u$ и $u_0$ в слагаемых $\rho$. Из (\ref{nei}) разница между ними равна
+
+\begin{equation}\label{e17}
+  \frac{\partial u}{\partial \textbf{n}}(1, \theta) - \frac{\partial u_0}{\partial \textbf{n}}(1, \theta)
+= - \sum_{k \in \mathbb{Z}}{\frac{2|k|\rho^{2|k|}}{1+\rho^{2|k|}}f_k e^{ik\theta}}.
+\end{equation}
+
+Чтобы оценить разность между $u$ и $u_0$ введем $L^2(\partial \Omega)$ норму:
+
+\begin{equation*}
+\norm{\frac{\partial u}{\partial \textbf{n}}(1, \theta) - \frac{\partial u_0}{\partial \textbf{n}}(1, \theta)}^{2}_{L^2(\partial \Omega)} :=
+\int^{2\pi}_{0}{\lvert \frac{\partial u}{\partial \textbf{n}}(1, \theta) - \frac{\partial u_0}{\partial \textbf{n}}(1, \theta) \rvert^2} d\theta =
+\end{equation*}
+
+\begin{equation}\label{e18}
+= 2\pi \sum_{k \in \textbf{Z}}{\frac{4k^2\rho^{4|k|}}{(1+\rho^{2|k|})^2}|f_k|^2},
+\end{equation}
+
+последняя строка следует из (\ref{e17}) и равенства Парсиваля (смотри стр. 133, [27]). 
+
+Из (\ref{e18}) и того факта, что $\frac{\rho^{4|k|}}{(1+\rho^{2|k|})^2} < \rho^4$, если $0 < \rho < 1$ и $|k| \geq 1$, получаем
+
+\begin{equation*}
+\norm{\frac{\partial u}{\partial \textbf{n}}(1, \theta) - \frac{\partial u_0}{\partial \textbf{n}}(1, \theta)}^{2}_{L^2(\partial \Omega)} \le 8\pi\rho^4 \sum_{k \in \textbf{Z}}{k^2|f_k|^2} = 4\rho^4 \norm{\frac{\partial u_0}{\partial \textbf{n}}(1, \theta)}^{2}_{L^2(\partial \Omega)}.
+\end{equation*}
+
+Выражение сверху справа следует из (\ref{nei}) при $\rho = 0$ и равенства Парсиваля. После взятия квадратного корня из обеих частей 
+имеем
+
+\begin{equation}\label{diff}
+\norm{\frac{\partial u}{\partial \textbf{n}}(1, \theta) - \frac{\partial u_0}{\partial \textbf{n}}(1, \theta)}_{L^2(\partial \Omega)} \le 2\rho^2 \norm{\frac{\partial u_0}{\partial \textbf{n}}(1, \theta)}_{L^2(\partial \Omega)}.
+\end{equation} 
+В кратце, если отверстие мало, то и разница будет мала, пропорциональная $\rho^2$ (тоесть плозади отверстия).
+Если наблюдатель измеряет данные с некоторой конечной точностью, то мы можем спрятать объект, если $\rho$ сделать настолько малым, что возмущение будет ниже пороговой точности, конечно, если объект поместится в отверстие. Если же наблюдатель проводит измерения с высокой точностью, то соответсвенно $\rho$ будет слишком мало, чтобы спрятать объект, и данный подход не сработает.
+
+
+\textit{Упражнение 7.} Вычислите $\norm{\frac{\partial u}{\partial \textbf{n}}(1, \theta) - \frac{\partial u_0}{\partial \textbf{n}}(1, \theta)}_{L^2(\partial \Omega)}$ с заданными условиями Дирихле $f(\theta) = \cos\theta$ (смотри Упражнение 6 в предыдущей секции).
+
+
+\textit{Упражнение 8.} (Обобщение Упражнения 6). Покажите, что коэффициент Фурье $f_1$ отличен от нуля. Тогда, в принципе, мы можем 
+определить $\rho$ из граничных условий вычислив интеграл
+
+\begin{equation*}
+I = 	\int^{2\pi}_{0}{\frac{\partial u}{\partial \textbf{n}}(1, \theta)e^{-i\theta}d\theta}.
+\end{equation*}
+
+А затем, решить $(1-\rho^2)/(1+\rho^2) = \frac{I}{2\pi f_1}$ для $\rho$. $f_1$ может быть опеределн из условия Дирихле.
+\textit{Подсказка:} используйте (\ref{nei}) и ортогональность функций $e^{ik\theta}$ на $[0, 2\pi)$.
+
+
+\textit{Упражнение 9.} Покажите, что если $f_1$ не равен нулю, тогда
+
+\begin{equation*}
+	\norm{\frac{\partial u}{\partial \textbf{n}}(1, \theta) - \frac{\partial u_0}{\partial \textbf{n}}(1, \theta)}_{L^2(\partial \Omega)} 	
+	\geq \frac{4\sqrt{\pi}\rho^2|f_1|}{1+\rho^2} \geq 2\sqrt{\pi}|f_1|\rho^2
+\end{equation*}
+для $\rho \le 1$. Таким образом, данные Неймана должны отличаться по крайней мере на велечину, пропорциональную $\rho^2$.
+\textit{Подсказка:} $f_{-1} = \overline{f_1}$, если $f$ вещественное. Просто опустите все члены, кроме
+$k = 1$ и $k = -1$ в (\ref{e18})
+
 \end{document}
