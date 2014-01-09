@@ -16,6 +16,7 @@
  \newcommand{\email}[1]{\centerline{{\small e-mail: #1}}\vspace{\baselineskip}}
 \providecommand{\keywords}[1]{\textbf{\textit{Ключевые слова:}} #1}
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newtheorem{lemma}{Лемма}
 \begin{document}
 
 \sloppy
@@ -38,6 +39,7 @@ and Harry Potter’s Cloak}
 \setcounter{secnumdepth}{5}
 \numberwithin{equation}{section}
 \numberwithin{figure}{section}
+\numberwithin{lemma}{section}
 %\titlelabel{\thetitle.\hspace{0pt}}
 
 \section{Введение}
@@ -130,7 +132,7 @@ u = f \text{\;на\;} \partial \Omega,
 
 Для анизотропной проводимости (\ref{ani}) заменяет (\ref{dep}), и (\ref{eq}) становится
 
-\begin{equation}
+\begin{equation}\label{e2.7}
 \nabla \cdot \sigma \nabla u = 0 \text{\;в\;} \Omega.
 \end{equation}
 Если электрическое поле $\textbf{E}$ применяется в направлении, параллельном $\textbf{v}_M$ тогда результирующий поток тока равен $\textbf{J} = \sigma \textbf{E} = \gamma_M \textbf{E}$ так, что $\| \textbf{J} \| = \gamma_M \| \textbf{E} \|$. Для фиксированных значений $\| \textbf{E} \|$ это направление для $\textbf{E}$ (параллельное $\textbf{v}_M$), максимизирует $\| \textbf{J} \|$. Смотри Упражнение 4 ниже. Аналогично, когда $\textbf{E}$ параллельно $\textbf{v}_m$ минимизирует $\| \textbf{J} \|$.
@@ -375,5 +377,113 @@ $D \phi(\textbf{x}) =
  \end{bmatrix}
 $
 \end{center}
-несингулярна в $\overline{\Omega_{\rho}}$
+несингулярна в $\overline{\Omega_{\rho}}$.
+
+
+Определим функцию $v$ на $\Omega_{1/2}$ следущим образом: $v(\textbf{y}) = u(\phi^{-1}(\textbf{y}))$ или, эквивалентно, $v(\phi(\textbf{y}))=u(\textbf{x})$. Тоесть $v$ это функция $u$, просто <<выдвинутая вперед>> из области $\Omega_{\rho}$ в $\Omega_{1/2}$ отображением $\phi$. Поскольку $\Delta u = 0$ в $\Omega_{\rho}$,
+$v$ в $\Omega_{1/2}$ удовлетворяет определенному диффиренциальному уравнению:
+\begin{lemma}
+С учетом предположений выше, функция $v(\textbf{y})$ удовлетворяет уравнению
+
+\begin{equation}\label{e31}
+\nabla \cdot \sigma(\textbf{y})\nabla v = 0
+\end{equation}
+
+в $\Omega_{1/2}$, где $\sigma(\textbf{y})$ обозначает матрицу $2 \times 2$
+
+\begin{equation}\label{e32}
+\sigma(\textbf{y}) = \frac{D\phi(\textbf{y})(D\phi(\textbf{y}))^T}{|det(D\phi(\textbf{y}))|},
+\end{equation}
+
+вычисленную в точке $\textbf{x} = \phi^{-1}(\textbf{y})$.
+\end{lemma}
+
+\begin{proof}
+Доказательство этой леммы, безусловно, может быть получено путем <<грубой силы>>: применением оператора Лапласа к обеим частям уравнения $u(\textbf{x}) = v(\phi(\textbf{x}))$ и используя правило дифференцирования сложной функции. Более изящное доказательство получается при использовании формулы Гаусса-Остроградского. Во первых, правило дифференцирования сложной функции, примененное к функции $u(\textbf{x}) = v(\phi(\textbf{•}xtbf{x}))$ дает
+
+\begin{equation*}
+\frac{\partial u}{\partial x_1}(\textbf{x}) = 
+\frac{\partial y_1}{\partial x_1} \frac{\partial v}{\partial y_1}(\phi(\textbf{x})) +
+\frac{\partial y_2}{\partial x_1} \frac{\partial v}{\partial y_2}(\phi(\textbf{x})),
+\end{equation*}
+
+\begin{equation*}
+\frac{\partial u}{\partial x_2}(\textbf{x}) = 
+\frac{\partial y_1}{\partial x_2} \frac{\partial v}{\partial y_1}(\phi(\textbf{x})) +
+\frac{\partial y_2}{\partial x_2} \frac{\partial v}{\partial y_2}(\phi(\textbf{x})).
+\end{equation*}
+
+Что более компактно можно записать $\nabla_x u(\textbf{x}) = (D\phi(\textbf{x}))^T \nabla_y v(\phi(\textbf{x}))$, где $\nabla_x$ означает градиент в $(x_1, x_2)$, а $\nabla_y$ градиент в $(y_1, y_2)$.
+
+
+Пусть $w(\textbf{x})$ --- любая непрерывно дифференцируемая функция, определенная в $\overline{\Omega_{\rho}}$, с $w = 0$ на $\partial \Omega_{\rho}$ и $\tilde{w}$ на $\partial \Omega_{1/2}$ 
+как $\tilde{w}(\textbf{y})=w(\phi^{-1}(\textbf{y}))$ (или $w(\textbf{x}) = \tilde{w}(\phi(\textbf{x}))$).
+Вычисления выше показывают, что $\nabla_x w(\textbf{x}) = (D\phi(\textbf{x}))^T \nabla_y \tilde{w}(\phi(\textbf{x}))$. Так как $\Delta_x u =0$ в $\Omega_{\rho}$ имеем
+
+\begin{equation}\label{e3.3}
+\int_{\Omega_{\rho}}{w(\textbf{x})\Delta_x u(\textbf{x})d\textbf{x}} = 0.
+\end{equation}
+Отметим, что $\Delta_x u = \nabla_x \cdot (w \nabla_x u) - \nabla_x w \cdot \nabla_x u$. Подставляя это выражение в (\ref{e3.3}) и применя формулу Гаусса-Остроградского к первому слагаемому получаем
+
+\begin{equation*}
+\int_{\partial \Omega_{\rho}}{w \nabla_x u \cdot \textbf{n} ds} - 
+\int_{\Omega_{\rho}}{\nabla_x w \cdot \nabla_x u\;d\textbf{x}} = 0.
+\end{equation*}
+Первый интеграл равен нулю, поскольку $w \equiv 0$ в $\partial \Omega$. 
+Так как $\nabla_x w \cdot \nabla_x u = (\nabla_x w)^T\nabla_x\; u$ преобразуем второй интеграл к виду
+
+\begin{equation*}
+\int_{\Omega_{\rho}}{(\nabla_x w)^T\nabla_x u\; d\textbf{x}} = 0.
+\end{equation*}
+Используя то, что $\nabla_x u(\textbf{x}) = (D\phi(\textbf{x}))^T \nabla_y v(\phi(\textbf{x}))$
+и $\nabla_w u(\textbf{x}) = (D\phi(\textbf{x}))^T \nabla_y \tilde{w}(\phi(\textbf{x}))$, можно переписать последнее выражение как 
+
+\begin{equation*}
+\int_{\Omega_{\rho}}{\nabla_y \tilde{w}(\phi(\textbf{y}))^T(D\phi(\textbf{x}))(D\phi(\textbf{x}))^T \nabla_y v(\phi(\textbf{x}))d\textbf{x}}=0.
+\end{equation*}
+
+
+Теперь произведем замену переменных в $\textbf{y}$ координаты с $\phi(\textbf{x}) = \textbf{y}$ и
+$d\textbf{x} = d\textbf{y}/|det(D\phi)|$. Мы найдем 
+
+\begin{equation}\label{e3.4}
+\int_{\Omega_{1/2}}{(\nabla_y \tilde{w}(\textbf{y}))^T(\sigma(\textbf{y})\nabla_y v(\textbf{y}))}d\textbf{y}=0
+\end{equation}
+с $\sigma(\textbf{y})$, взятой как в условии леммы. Непосредственные вычисления показывают, что
+
+\begin{equation*}
+(\nabla_y \tilde{w}(\textbf{y}))^T(\sigma(\textbf{y})\nabla_y v(\textbf{y}))
+\end{equation*}
+\begin{equation*}
+= \nabla_y \tilde{w}(\textbf{y}) \cdot (\sigma(\textbf{y})\nabla_y v(\textbf{y}))
+\end{equation*}
+\begin{equation}\label{e3.5}
+=  \nabla_y \cdot (\tilde{w}(\textbf{y} \sigma(\textbf{y})\nabla_y v(\textbf{y})) - 
+\tilde{w}(\textbf{y})\nabla_y \cdot (\sigma(\textbf{y})\nabla_y v(\textbf{y})).
+\end{equation}
+Если мы заменим подынтегральное выражение в (\ref{e3.4}) на (\ref{e3.5}) найдем 
+
+\begin{equation*}
+\int_{\Omega_{1/2}}{\nabla_y \cdot (\tilde{w}(\textbf{y} \sigma(\textbf{y})\nabla_y v(\textbf{y})) d\textbf{y}} -
+\int_{\Omega_{1/2}}{\tilde{w}(\textbf{y})\nabla_y \cdot (\sigma(\textbf{y})\nabla_y v(\textbf{y})) d\textbf{y}} =0.
+\end{equation*}
+Применяя формулу Гаусса-Остроградского к первому интегралу и пользуясь тем фактом, что $\tilde{w}(\textbf{y}) \equiv 0 $ на $\partial \Omega_{1/2}$ видим, что на самом деле интеграл равен нулю и мы остаемся с одним слагаемым
+
+\begin{equation}\label{e36}
+\int_{\Omega_{1/2}}{\tilde{w}(\textbf{y})\nabla_y \cdot (\sigma(\textbf{y})\nabla_y v(\textbf{y})) d\textbf{y}} =0.
+\end{equation}
+(\ref{e36}) выполняется для любой непрерывно диффиренцируемой функции. Мы утверждаем, что силы 
+$\nabla_y \cdot (\sigma(\textbf{y})\nabla_y v(\textbf{y}))$ будут в точности равны нулю в $\Omega_{1/2}$.
+
+
+Чтобы показать это, обозначим величину $\nabla_y \cdot (\sigma(\textbf{y})\nabla_y v(\textbf{y}))$ за
+$h(\textbf{y})$ в подынтегральном выражении (\ref{e36}). Из допущений для $\phi$ и $u$ следует, что функция $h$ непрерывна в $\Omega_{1/2}$.
+Предположим противное, пусть $h$ не равна нулю в $\Omega_{1/2}$, для определенности, скажем $h(\textbf{y})>0$ в некоторой точке $\textbf{y}_0$. Так как $h$ непрерывна, $h(\textbf{y})>0$ в шаре $B_{\delta}(\textbf{y}_0) \subset \Omega_{1/2}$ для некоторого $\delta > 0$.
+Можно выбрать некоторую функцию $\tilde{w} \geq 0$, положительную в шаре $B_{\delta}(\textbf{y}_0)$ и 
+$\tilde{w} \equiv 0$ вне него. Следовательно, произведение $\tilde{w}(\textbf{y})h(\textbf{y}) \geq 0$ в $\Omega_{1/2}$ и не равно тождественно нулю. Но тогда интеграл (\ref{e36}) не может быть равным нулю, получили противоречие. Заключаем, что $h(\textbf{y}) = \nabla_y \cdot (\sigma(\textbf{y})\nabla_y v(\textbf{y})) = 0$ в $\Omega_{1/2}$. Что и требовалось доказать.
+\end{proof}
+Матрица $\sigma$, определенная из (\ref{e3.4}) положительно определена (смотри Упражнение 10).
+Сравнение (\ref{e31}) и (\ref{e2.7}) показывает, что $v$ может считаться электрическим потенциалом внутри $\Omega_{1/2}$, отвечающим анизотропной проводимости $\sigma$. Это наблюдение позволяет нам спроектировать параметры анизотропной проводимости,чтобы скрывающую шар $B_{1/2}(\textbf{0})$.
+
+\textit{Упрежнение 10.} Покажите, что матрица $\sigma(\textbf{y})$, определенная в (\ref{e32}) есть симметричная, положительно определенная для всех $\textbf{y}$ матрица.   
 \end{document}
