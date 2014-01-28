@@ -779,4 +779,36 @@ $\Omega_{1/2}$, отвечающим анизотропной проводимо
 окрестность $1/2 + \delta < \norm{x} < 1$ внутренней границе в $\norm{x} = 1$);
 \item функция $\psi$ дважды непрерывна диффиренцируема и $\psi'(r) \geq d_0 > 0$ для некоторого $d_0$, значит $\psi$ будет строго возрастающей и обратимой.
 \end{itemize}
+Отображение $\phi$ просто <<толкает>> точки в $\Omega_{\rho}$ радиально из начала
+наружу, по крайней мере для $\rho \le \norm{\textbf{x}} < 1/2 + \delta$. Есть много
+способов соорудить такую функцию $\psi$, например 
+\begin{equation}\label{psi}
+\psi(r) = 
+\begin{cases}
+\frac{1}{2} + \frac{\delta}{1-2\rho}(r-\rho), \;\rho \le r \le \frac{1}{2},\\
+g(r), \quad \quad \quad \quad \quad \frac{1}{2} < r < \frac{1}{2} + \delta,\\
+r, \; \quad \quad \quad \quad \quad \quad \frac{1}{2} + \delta \le r \le 1,\\
+\end{cases}
+\end{equation}
+где $g(r)$ --- некоторая подходящим образом выбранная функция, гладко интерполирующая
+между двумя областями, на которых $\psi$ линейна. На данный момент точная формула для
+$g(r)$ не важна. Типичная функция $\psi$ и отображение $\Omega_{\rho}$ в
+$\Omega_{1/2}$ показано на рисунке 3.1.
+
+При таком отображении $\phi$ мы имеем $\textbf{y} = \textbf{x}$ в окрестности
+$1/2 + \delta \le r \le$ внешней границы и $u \equiv v$ в этой области. Функция 
+$v = u\circ \phi^{-1}$ также имеет нулевые условия Неймана на внутренней границе 
+$\norm{\textbf{x}} = 1/2$. В частности, если вспомнить, что $\frac{\partial
+}{\partial \textbf{n}} = - \frac{\partial}{\partial \norm{\textbf{y}}}$
+при $\norm{\textbf{y}} = 1/2$, имеем
+\begin{equation*}
+\left.\frac{\partial v}{\partial \textbf{n}}\right|_{\norm{\textbf{y}}=1/2} = 
+\left.\frac{\partial v}{\partial \norm{\textbf{y}}}\right|_{\norm{\textbf{y}}=1/2} =
+-\frac{\partial \norm{\textbf{x}}}{\partial \norm{\textbf{y}}} 
+\left.\frac{\partial u}{\partial \norm{\textbf{x}}}\right|_{\norm{\textbf{x}}=\rho} =
+\end{equation*}  
+\begin{equation*}
+= -\frac{1-2\rho}{\delta} \left.\frac{\partial u}{\partial \norm{\textbf{x}}}
+\right|_{\norm{\textbf{x}}=\rho} = 0,
+\end{equation*}
 \end{document}
