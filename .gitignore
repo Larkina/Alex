@@ -9,3 +9,6 @@
 *.synctex.gz
 *.dvi
 *.tex.backup
+*.fdb_latexmk
+*.sublime-project
+*.sublime-workspace
