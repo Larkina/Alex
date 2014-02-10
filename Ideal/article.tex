@@ -77,21 +77,86 @@
 поперечно-электрическое(TE) полязированное магнитное поле (т.е. электрическое поле существует только в 
 $\zeta$-направлении); однако, аналогичные рассуждения могут быть проведены для поперечно-магнитного поля. На протяжении
 работы предполагается $\exp(-iwt)$ зависимость от времени. Для TE-поляризованной волны только $\varepsilon_\zeta, \mu_r$
-и $\mu_\theta$ относятся к следущему общему волновому уравнению, регулирующему поле $E_\zeta$ в цилиндрических 
+и $\mu_\theta$ относятся к следущему общему волновому уравнению, регулирующему поле $\textbf{E}_\zeta$ в цилиндрических 
 координатах оболочки
 
 \begin{equation}\label{e3}
-	\frac{1}{\varepsilon_\zeta r} \frac{\partial}{\partial r}(\frac{r}{\mu_\theta}\frac{\partial E_\zeta}{\partial r}) +
-	\frac{1}{\varepsilon_\zeta r^2} \frac{\partial}{\partial \theta}(\frac{1}{\mu_r}\frac{\partial E_\zeta}{\partial 
-	\theta}) + k_0^2 E_\zeta = 0,
+	\frac{1}{\varepsilon_\zeta r} \frac{\partial}{\partial r}(\frac{r}{\mu_\theta}\frac{\partial \textbf{E}_\zeta}
+	{\partial r}) +
+	\frac{1}{\varepsilon_\zeta r^2} \frac{\partial}{\partial \theta}(\frac{1}{\mu_r}\frac{\partial \textbf{E}_\zeta}
+	{\partial \theta}) + k_0^2 \textbf{E}_\zeta = 0,
 \end{equation}
 где $k_0$ волновой вектор света в вакууме. Если мы подставим ур. (\ref{e2}) для $\varepsilon_\zeta, \mu_r$ и 
 $\mu_\theta$ получим
 \begin{equation}\label{e4}
-	r^2 \frac{\partial^2 E_\zeta}{\partial r^2} + r\mu_\theta \frac{\partial E_\zeta}{\partial r} + 
-	\varepsilon_\zeta \mu_\theta r^2 k_0^2 E_\zeta + \frac{\mu_\theta}{\mu_r} \frac{\partial^2 E_\zeta}{\partial 
-	\theta^2} = 0.
+	r^2 \frac{\partial^2 \textbf{E}_\zeta}{\partial r^2} + r\mu_\theta \frac{\partial \textbf{E}_\zeta}{\partial r} + 
+	\varepsilon_\zeta \mu_\theta r^2 k_0^2 \textbf{E}_\zeta + \frac{\mu_\theta}{\mu_r} \frac{\partial^2 
+	\textbf{E}_\zeta}{\partial \theta^2} = 0.
 \end{equation}
+Уравнение (\ref{e4}) может быть решено разделением переменных
+$ \textbf{E}_\zeta = \mathbf{\Psi}(r) \mathbf{\Theta}(\theta)$ и введением константы $l$:
+\begin{equation}\label{e5}
+	(r-a)^2 \frac{\partial^2 \mathbf{\Psi}}{\partial r^2} + (r-a) \frac{\partial \mathbf{\Psi}}{\partial r} +
+	\left[ (\frac{b}{b-a})^2(r-a)^2 k_0^2-l^2\right] \mathbf{\Psi} = 0,
+\end{equation}
+
+\begin{equation}\label{e6}
+	\frac{\partial^2 \mathbf{\Theta}}{\partial \theta^2} + l^2 \mathbf{\Theta} = 0.
+\end{equation}
+Уравнение (\ref{e5}) есть диффиренциальное уравнение Бесселя порядка $l$, а общее решение ур. (\ref{e6}) имеет вид
+$\exp(il\theta)$. Поэтому существует простое множество решений $\mathbf{E}_\zeta$ в маскирующей оболочке вида
+
+\begin{equation}\label{e7}
+	F_l(k_1(r-a))\exp(il\theta),
+\end{equation}
+где $k_1 = k_0 b/(b-a), F_l$ функция Бесселя порядка $l$, $l$ --- целое число, как того требует вращательное граничное 
+условие.
+
+Рассмотрим задачу рассеяния, в которой произвольная волна падает на оболочку. Согласно строгой теории рассеяния 
+\cite{12}, падающее поле в двумерном случае может быть разложено по координатам оболочки следущим образом:
+
+\begin{equation}\label{e8}
+	\mathbf{E}_\zeta^{in} = \sum\limits_l \alpha_l^{in} \mathbf{J}_l(k_0 r)\exp(il\theta),
+\end{equation}
+где $\mathbf{J}_l$ функция Бесселя порядка $l$ первого рода. Рассеянное поле так же может быть разложено как
+
+\begin{equation}\label{e9}
+	\mathbf{E}_\zeta^{sc} = \sum\limits_l \alpha_l^{sc} \mathbf{H}_l(k_0 r)\exp(il\theta),
+\end{equation}
+где $\mathbf{H}_l$ функция Ханкеля порядка $l$ первого рода.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[height=0.15\paperheight]{1.png}
+  \caption{Схема почти идеальной маскировочной оболочки: распределение параметров такое же, как идеальное, показанное в
+  ур. (\ref{e2}) и внешняя граница зафиксирована в $r=b$. Однако реальная внутренняя граница расположена в 
+  $r=a +\delta$, где $\delta$ очень маленькое положительное число.}
+  \label{fig:1}
+\end{figure}
+
+Отметим, что коэффициенты рассеяния не могут быть прямо получены для идеального плаща, так как $\varepsilon_\zeta \to 0,
+\mu_r \to 0$ и $\mu_\theta \to \infty$, когда $r \to a$, и функции Бесселя второго рода в ур. (\ref{e7}) имеют 
+сингулярность при $r = a$. Чтобы обойти это мы вводим малое возмущение в идеальную оболочку, на такую оболочку будем
+ссылаться как на почти идеальную, см. Рис.\ref{fig:1}.  Мы немного расширим внутреннюю границу так, что она будет
+находится в $r = a + \delta$, где $\delta$ очень маленькое положительное число. Тем не менее, параметры все еще
+вычисляются согласно формуле (\ref{e2}), как будто внутренняя граница не поменялась. Внешняя граница остается
+зафиксированной $r = b$. Когда $\delta \to 0$ наша модель будет эквивалентна идеальной оболочке. Теперь электрическое
+поле в каждой области задается соотношениями
+
+\begin{equation*}
+	(b<r)\mathbf{E}_\zeta = \sum\limits_l (\alpha_l^{in} \mathbf{J}_l(k_0 r)\exp(il\theta) +
+								\alpha_l^{sc} \mathbf{H}_l(k_0 r)\exp(il\theta))
+\end{equation*}
+ 
+\begin{equation}
+	(a+\delta<r<b)\mathbf{E}_\zeta = \sum\limits_l (\alpha_l^{1} \mathbf{J}_l(k_0 (r-a))\exp(il\theta) +
+								\alpha_l^{2} \mathbf{H}_l(k_0 (r-a))\exp(il\theta))
+\end{equation}
+
+\begin{equation*}
+	(r<a+\delta)\mathbf{E}_\zeta = \sum\limits_l (\alpha_l^{3} \mathbf{J}_l(k_0 r)\exp(il\theta)
+\end{equation*}
+
 \begin{thebibliography}{99}
 \bibitem{1}J. B. Pendry, D. Schurig, and D. R. Smith, Science 312, 1780 (2006).
 \bibitem{2}U. Leonhardt, Science 312, 1777 (2006).
