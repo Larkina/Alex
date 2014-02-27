@@ -1,0 +1,40 @@
+\documentclass[12pt,a4paper]{article}
+%\documentclass[17pt,russian]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[OT1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+
+ \newcommand{\tit}[1]{\begin{center}{\bf{\Large #1}}\end{center}}
+ \newcommand{\aut}[1]{\centerline{{\bf #1}}}
+ \newcommand{\cityorg}[1]{\centerline{\it #1}}
+ \newcommand{\email}[1]{\centerline{{\small e-mail: #1}}\vspace{\baselineskip}}
+ \renewcommand{\normalsize}{\fontsize{16pt}{16}\selectfont}
+ \renewcommand{\baselinestretch}{1.5}
+\providecommand{\keywords}[1]{\textbf{\textit{Keywords:}} #1}
+
+\begin{document}
+
+We consider 3-D acoustic waves scattering model on permeable heterogeneous obstacle in bounded domain $\Omega$ of $\mathbb{R}^3$ corresponds to conjugation problem for 3-D Helmholtz 
+equation with variable coefficients. Inverse problem which arises when constructing 
+cloak devices for material bodies from observation by acoustic waves is formulated. 
+This problem consists of finding one or two Helmholtz equation coefficients, describing 
+variable medium properties for specific information about scattered acoustic field.
+Using the optimization method, it reduces to the study of the inverse extremal problem,
+which
+consists of finding minimum of specific quality functional, depends on the control and
+initial weak solution of boundary value problem. Solvability of inverse extreme problem
+is proved.
+
+Existence of Lagrange multiplier for every control problem is proved, optimality system 
+including direct problem for main state, conjugate problem for the conjugate state
+and variational inequality for finding desired controls is constructed.
+Based on optimality system sufficient conditions for initial data are established.
+This conditions provide uniqueness and stability of specific extreme problem solutions.
+Furthermore, effective numerical algorithms for solving problem are developed.
+\end{document} 
