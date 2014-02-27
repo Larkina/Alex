@@ -1,0 +1,16 @@
+The project focuses on the development of the mathematical apparatus for the study problems of material objects сloaking and the creation of efficient numerical algorithms for their solution. 
+
+The inverse problem, optimal control and stabilization problem for the Helmholtz and Maxwell equations with variable coefficients, the radiative transfer equation, as well as for the MHD equations are considered. 
+
+Relevance of the project associated with the applications results in designing devices for cloaking material bodies from finding them by electromagnetic or acoustic location, partial cloaking of industrial products, design absorbing materials and coatings for biomedical measurements.
+
+Scientific novelty of the project is to develop an original method of solving 
+cloaking problems, analysis of boundary value problems, 
+correctness of that formulations now is an open problem, the development of new control methods and author's numerical algorithms.
+
+
+During realization of the project it would be developed а new mathematical apparatus of analysis inverse impedance extremal problems for Helmholtz and Maxwell equations with variable coefficients, control and stabilization problems for magnetohydrodynamics equations. Scientific value of results is based on solving of open problems of well-posing, developing new methods of control for non-linear models, designing new systems with given extremal behaviour.
+Derieved methods and algorithms could be used in systems of operational analyses and prediction of hydro-physical fields, design of acoustic and electromagnetic cloaking devices, as well as partial cloaking devices for hiding industrial products from roentgen illumination.
+Project results are rigorous proofs of theorems of existence, uniqueness and stability of solutions of boundary and inverse problems, verification of the convergence of suggested numerical algorithms, construction of feedback control operators providing effective functioning of considered objects and numerical modelling software.
+
+Mentioned results will be published as a monograph «Analyses and optimization in material bodies cloaking problems» and in a series of articles in rating Russian and foreign journals. Part of the results would be included in master program courses «mathematical modeling», «inverse and ill-posed problems», «physical fields control methods», implemented in Far Eastern Federal University.
