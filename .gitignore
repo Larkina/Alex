@@ -9,6 +9,7 @@
 *.synctex.gz
 *.dvi
 *.tex.backup
+*.out
 *.fdb_latexmk
 *.sublime-project
 *.sublime-workspace
