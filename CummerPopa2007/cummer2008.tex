@@ -124,6 +124,138 @@ $\lambda_0$ находится в $r>b$ и $r<a$, в то время как ма
  материальные свойства, которые нужно определить. Более того, симметрия 
  предполагает, что $\rho_\theta(r)=\rho_\phi(r)$. Предполагается, что эти параметры
  нормализованы по отношению к плостности $\rho_0$ и модулю сжатия $\lambda_0$окружения.
+
+ Легко показать, что $p$ удовлетворяет уравнению 
+
+ \begin{equation}\label{e3}
+ 	\nabla \cdot (\dbar{\rho}^{-1}\nabla p) + \frac{\omega^2}{\lambda}p=0.
+ \end{equation}
+
+ Сначала мы сфокусируемся на решении уравнения \eqref{e3} внутри анизотропной
+ оболочки. В этой области в сферических коориднатах уравнение переходит в
+
+ \begin{equation}
+ 		\frac{\omega^2}{v^2_{p_0}} r^2p+ \lambda \frac{\partial}{\partial r}
+ 		\left( \frac{r^2}{\rho_r} \frac{\partial p}{\partial r} \right) +
+ 		\frac{\lambda}{\rho_\phi\sin\theta}\frac{\partial}{\partial\theta}
+ 		\left( \sin\theta \frac{\partial p}{\partial \theta}\right) +
+ 		\frac{\lambda}{\rho_\phi\sin\theta} \frac{\partial^2 p}{\partial\phi^2}=0,
+ \end{equation}
+ здесь мы использовали сжатую скорость волны в окружающей среде
+ $v_{p_0}=\sqrt{\rho_0/\lambda_0}$ и $\rho_\theta(r)=\rho_\phi(r)$.
+ Азимутальные элементы массовой плотности были вынесены из под знака производной,
+ так как они зависят только от радиуса.
+
+ Следуя методу разделения переменных положим 
+ $p(r,\theta,\phi)=f(r)g(\theta)h(\phi)$, и после умножения всех слагаемых
+ на $\lambda^{-1}\rho_\phi\sin\theta$ обыкновенное дифференциальное уравнение
+ для $f(r)$ принимает вид 
+
+ \begin{equation} \label{e5}
+ 	\rho_\phi \frac{\partial}{\partial r}\left(\frac{r^2}{\rho_r}
+ 	\frac{\partial f}{\partial r}\right) +
+ 	\left[ k_0^2 \frac{\rho_\phi}{\lambda} r^2 - n(n+1) \right]f =0,
+ \end{equation}
+ здесь мы исользовали волновое число в окружающей среде 
+ $k_0^2=\omega/v^2_{p_0}$. Итоговые уравнения для $g(\theta)$ и $h(\phi)$
+ имеют стандартную форму \cite{11}, и их решениями являются ассоциированные
+ функции Лежандра $g(\theta)=K_0P_n^m(\cos\theta)$ (другие функции Лежандра были
+ исключены из-за области) и азимутальные гармоники 
+ $h(\phi)=K_1\cos (m\phi) + K_2\sin(m\phi)$. Однако \eqref{e5} не
+ является ф=сферическим уравнением Бесселя из-за зависимости $r$ от
+ акустических свойств оболочки.
+
+ Chen et al. \cite{7} показали, что важным элементом при создании трехмерной
+ электромагнитной маскирующей нерассеивающей оболочки является радиальный
+ сдвиг $r$ к $(r-a)$ в уравнении для $f(r)$ 
+ (которое является уравнением Рикатти-Бесселя в электромагнитном случае),
+ которое получилось для радиально заивисмых параметров среды. Считая его
+ одним потенциальным путем для реализации нерассеивающей оболочки, найдем
+ условия для $\rho_r, \rho_\phi$ и $\lambda$, которые преобразуют \eqref{e5}
+ в стандартное сферическое уравнение Бесселя для $(r-a)$. Такие условия
+ имеют вид:
+
+ \begin{equation}
+ 	\frac{r^2}{\rho_r} = \frac{(r-a)^2}{k_1},
+ \end{equation}
+
+ \begin{equation}
+ 	\rho_\phi=k_1,
+ \end{equation}
+
+ \begin{equation}
+ 	\frac{\rho_\phi}{\lambda}k_0^2r^2=k^2_{sh}(r-a)^2,
+ \end{equation}
+ здесь $k_1$ и $k_{sh}$ константы, которые будут определены позднее.
+ При выполнении этих условий уравнение \eqref{e5} переходит в уравнение
+
+ \begin{equation}
+ 	\frac{\partial}{\partial r}\left((r-a)^2 \frac{\partial f}{\partial r}\right) +
+ 	[k^2_{sh}(r-a)^2-n(n+1)]f = 0,
+ \end{equation}
+ которое имеет решение $f(r)=b_n[k_{sh}(r-a)]$, где $b_n(x)$ ~--- сферическая
+ функция Бесселя или Ханкеля порядка $n$.
+
+ Теперь поле давления может быть выражено во всех областях. Для $r>b$,
+ сферическое разложение падающей сжатой волны дает
+
+ \begin{equation}
+ 	p^{inc} = \sum\limits_{n=0}^{\infty}{K_nj_n(k_0r)P_n(\cos\theta)},
+ \end{equation}
+ где $K_n=i^n(2n+1)$ и $P_n(\cos\theta)$ ~--- полином Лежандра степени $n$.
+ Рассеянное поле подчинено условию излучения и, в силу азимутальной инвариантности
+ источника и геометрии, может быть записано как
+
+ \begin{equation}
+ 	p^{scat} = \sum\limits_{n=0}^\infty{A_n h_n^{(1)}}(k_0r)P_n(\cos\theta),
+ \end{equation}
+ c $h_n^{(1)}$ ~--- сферической функцией Ханкеля первого рода и $A_n$ ~--- 
+ константами, которые следует определить из граничных условий. 
+ Для $a<r<b$ азимутальная инвариантность означает, что давление задается
+ соотношениями:
+
+ \begin{equation}
+ 	p^{sh} = \sum\limits_{n=0}^\infty{B_nj_n[k_{sh}(r-a)]P_n(\cos\theta)},
+ \end{equation}
+ где $j_n$ ~--- сферическая функция Бесселя, используемая для того, чтобы 
+ убедиться, что поле остается конечным при $r=a$. Это предположение будет
+ слегка изменено, чтобы преодолеть трудности, связанные с нулевой гармоникой.
+ Внутри оболочки, когда $r<a$, давление имеет вид:
+
+ \begin{equation}
+ 	p^{int} = \sum_{n=0}^\infty{C_nj_n(k_0r)P_n(\cos\theta)}.
+ \end{equation}
+ Радиальная скорость, перпендикулярная всем ....,  непрерывна, и, следовательно,
+ нужна для завершения задачи. Из \eqref{e1} имеем
+ \begin{equation}
+ 	v_r = - \frac{1}{i\omega\rho_r\rho_0} \frac{\partial p}{\partial r},
+ \end{equation}
+ и в результате выражения для радиальной скорости принимают вид 
+ 
+ \begin{equation}
+ 	v_r^{inc} = \frac{-k_0}{i\omega\rho_0}
+ 		\sum_{n=0}^\infty{K_nj'_n(k_0r)P_n(\cos\theta)},
+ \end{equation}
+
+ \begin{equation}
+  	v_r^{scat} = \frac{-k_0}{i\omega\rho_0}
+ 		\sum_{n=0}^\infty{A_n{h'}_n^{(1)}(k_0r)P_n(\cos\theta)},	
+ \end{equation}
+
+ \begin{equation}
+ 	 	v_r^{sh} = \frac{-k_{sh}}{i\omega\rho_0\rho_r}
+ 		\sum_{n=0}^\infty{B_nj'_n[k_{sh}(r-a)]P_n(\cos\theta)},
+ \end{equation}
+
+ \begin{equation}
+ 	 	v_r^{int} = \frac{-k_0}{i\omega\rho_0}
+ 		\sum_{n=0}^\infty{C_nj'_n(k_0r)P_n(\cos\theta)},
+ \end{equation}
+ штрих обозначает диффиренцирование по отношению ко всему аргументу функции 
+ Бесселя. После использования ортогональности $P_n(\cos\theta)$, непрерывность
+ $p$ и $v_r$ на $r=a$ означает, что выражения, которым должны удовлетворять
+ коэффициенты $A_n$ и $B_n$
+
 \begin{thebibliography}{99}
 \bibitem{1}J. B. Pendry,D. Schurig, and D. R. Smith, Science 312, 1780 (2006).
 \bibitem{2}D. Schurig, J. B. Pendry, and D. R. Smith, Opt. Express 14,
