@@ -13,4 +13,6 @@
 *.fdb_latexmk
 *.sublime-project
 *.sublime-workspace
+*.fls
+*.DS_Store
 Cloak14/
